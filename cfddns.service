@@ -1,0 +1,8 @@
+[Unit]
+Description=Cloudflare Dynamic DNS updater
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/bin/update-dns.sh --config /etc/cfddns.conf
